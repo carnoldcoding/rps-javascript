@@ -81,5 +81,23 @@
 }
 
 .feedback{
+    transition: 2s;
+}
 
+#r{
+    background-image: url("./images/rock.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#p{
+    background-image: url("./images/paper.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#s{
+    background-image: url("./images/scissors.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }

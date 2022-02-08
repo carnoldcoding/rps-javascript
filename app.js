@@ -15,6 +15,7 @@ const cpuScore = document.querySelector(".computer-score");
 const playerScore = document.querySelector(".player-score");
 const cards = document.querySelectorAll(".card");
 const feedback = document.querySelector(".feedback");
+
 cards.forEach((card) => {
     card.addEventListener("click", () => {
         player1.selection = card.id;
@@ -54,8 +55,6 @@ function reset(){
     player1.choice = "";
     player2.score = 0;
     player2.choice = "";
-
-    feedback.textContent("Lets get started!");
 }
 
 function computerPlay(){
@@ -69,22 +68,22 @@ function computerPlay(){
 function playRound(playerSelection, computerSelection){
 
     if(playerSelection == computerSelection){
-        return "draw"
+        return "It's a draw!"
     }
     else if(playerSelection == 'r' && computerSelection == 's') {
         player1.score++;
-        return "Player1 Wins"
+        return "You win this round!"
     }
     else if(playerSelection == 's' && computerSelection == 'p') {
         player1.score++;
-        return "Player1 Wins"
+        return "You win this round!"
     }
     else if(playerSelection == 'p' && computerSelection == 'r') {
         player1.score++;
-        return "Player1 Wins"
+        return "You win this round!"
     }
     else {
         player2.score++;
-        return "Player2 Wins";
+        return "CPU takes the round!";
     }
 }
