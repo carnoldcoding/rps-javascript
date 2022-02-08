@@ -4,6 +4,7 @@
     --background: wheat;
     --card-backgorund: rgb(250, 237, 214);
     --font-color: rgb(94, 77, 43);
+    --delay: 1.5s;
 }
 
 *{
@@ -40,6 +41,7 @@
     border: 1px solid black;
 
     transition: all .2s ease;
+
 }
 
 .card:hover{
