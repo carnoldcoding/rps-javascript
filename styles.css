@@ -24,18 +24,42 @@
 }
 
 .game-wrapper{
+    padding: 1rem 0;
     display: flex;
     align-items: center;
     flex: 1 1 70%;
+    flex-direction: column;
 
     color: var(--font-color);
     gap: 3rem;
 }
 
+.choices{
+    display: flex;
+    gap: 3rem;
+}
+
+.computer-card{
+    background: var(--card-backgorund);
+    height: 20vh;
+    width: 10vw;
+
+    border-radius: 1rem;
+    border: 1px solid black;
+
+    transition: all .2s ease;
+}
+
+.computer-card.active{
+    transform: scale(1.1);
+    background-color: lightpink;
+    transform: rotate(180deg);
+}
+
 .card{
     background: var(--card-backgorund);
-    height: 30vh;
-    width: 15vw;
+    height: 20vh;
+    width: 10vw;
 
     border-radius: 1rem;
     border: 1px solid black;
@@ -102,6 +126,28 @@
 }
 
 #s{
+    background-image: url("./images/scissors.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/*
+    ==Computer Cards==
+*/
+
+#cr{
+    background-image: url("./images/rock.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#cp{
+    background-image: url("./images/paper.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#cs{
     background-image: url("./images/scissors.png");
     background-size: contain;
     background-repeat: no-repeat;

@@ -16,6 +16,8 @@ const playerScore = document.querySelector(".player-score");
 const cards = document.querySelectorAll(".card");
 const feedback = document.querySelector(".feedback");
 
+const computerCards = document.querySelectorAll(".computer-card");
+
 cards.forEach((card) => {
     card.addEventListener("click", () => {
         
@@ -49,7 +51,21 @@ function reset(){
 }
 
 function computerPlay(){
-    return choices[Math.floor(Math.random() * choices.length)];
+    let choice = choices[Math.floor(Math.random() * choices.length)];
+    computerCards.forEach(card => {
+        
+        card.classList.remove("active");
+
+        if(card.id.includes(choice)){
+            card.classList.add("active");
+        }
+
+        // setTimeout(function(){
+        //     card.classList.remove("active");
+        // }, 500)
+    })
+
+    return choice 
 }
 
 //Rock > Scissors
