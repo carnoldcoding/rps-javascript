@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+
 :root{
     --background: wheat;
     --card-backgorund: rgb(250, 237, 214);
@@ -16,6 +18,7 @@
 
     height: 100vh;
     font-size: 4rem;
+    font-family: 'Delius', cursive;
     background: var(--background)
 }
 

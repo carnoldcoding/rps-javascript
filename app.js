@@ -18,6 +18,7 @@ const feedback = document.querySelector(".feedback");
 
 cards.forEach((card) => {
     card.addEventListener("click", () => {
+        
         player1.selection = card.id;
         player2.selection = computerPlay();
 
