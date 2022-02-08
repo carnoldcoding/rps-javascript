@@ -20,7 +20,6 @@ cards.forEach((card) => {
     card.addEventListener("click", () => {
         
         if(player1.score == 5 || player2.score == 5){
-            openModal();
             return;
         }
 
@@ -30,6 +29,10 @@ cards.forEach((card) => {
         feedback.textContent = playRound(player1.selection, player2.selection);
         playerScore.innerHTML = player1.score;
         cpuScore.innerHTML = player2.score;
+
+        if(player1.score == 5 || player2.score == 5){
+            openModal();
+        }
     })
 });
 
