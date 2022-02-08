@@ -19,34 +19,17 @@ const feedback = document.querySelector(".feedback");
 cards.forEach((card) => {
     card.addEventListener("click", () => {
         
+        if(player1.score == 5 || player2.score == 5){
+            openModal();
+            return;
+        }
+
         player1.selection = card.id;
         player2.selection = computerPlay();
 
         feedback.textContent = playRound(player1.selection, player2.selection);
         playerScore.innerHTML = player1.score;
         cpuScore.innerHTML = player2.score;
-
-        console.log(`
-            ==Game==
-
-            Player1 Choice: ${player1.selection}
-            Player2 Choice: ${player2.selection}
-
-            Player1 Score: ${player1.score}
-            Player2 Score: ${player2.score}
-            
-        `)
-
-        if(player1.score > 4){
-            feedback.textContent = "You win!!!"
-            reset();
-        }
-
-        if(player2.score > 4){
-            feedback.textContent = "You lose..."
-            reset();
-        }
-
     })
 });
 
@@ -56,6 +39,10 @@ function reset(){
     player1.choice = "";
     player2.score = 0;
     player2.choice = "";
+
+    playerScore.innerHTML = player1.score;
+    cpuScore.innerHTML = player2.score;
+
 }
 
 function computerPlay(){
@@ -88,3 +75,24 @@ function playRound(playerSelection, computerSelection){
         return "CPU takes the round!";
     }
 }
+
+//Modal
+const modal = document.querySelector(".modal-wrapper");
+const modalContent = document.querySelector(".modal-content");
+
+function openModal(){
+    modal.classList.add('active');
+    player1.score > player2.score ? modalContent.textContent = "You Win!" : modalContent.textContent = "You Lose!"
+}
+
+function closeModal(){
+    modal.classList.remove('active');
+}
+
+const modalButton = document.querySelector(".modal-button");
+
+modalButton.addEventListener("click", () => {
+    reset();
+    closeModal();
+})
+
