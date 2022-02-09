@@ -48,6 +48,7 @@
     border: 1px solid black;
 
     transition: all .2s ease;
+    transform: rotate(180deg);
 }
 
 .computer-card.active{
