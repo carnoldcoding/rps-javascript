@@ -59,9 +59,8 @@
 }
 
 .computer-card.active{
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(180deg);
     background-color: lightpink;
-    transform: rotate(180deg);
 }
 
 .card{
