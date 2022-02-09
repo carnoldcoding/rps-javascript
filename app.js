@@ -48,12 +48,16 @@ function reset(){
     playerScore.innerHTML = player1.score;
     cpuScore.innerHTML = player2.score;
 
+    computerCards.forEach(card => {
+        card.classList.remove("active");
+    })
+
 }
 
 function computerPlay(){
     let choice = choices[Math.floor(Math.random() * choices.length)];
     computerCards.forEach(card => {
-        
+
         card.classList.remove("active");
 
         if(card.id.includes(choice)){
