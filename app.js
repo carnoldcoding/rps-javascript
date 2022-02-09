@@ -32,6 +32,8 @@ cards.forEach((card) => {
         playerScore.innerHTML = player1.score;
         cpuScore.innerHTML = player2.score;
 
+        playerCardAnimate(card);
+
         if(player1.score == 5 || player2.score == 5){
             openModal();
         }
@@ -39,6 +41,12 @@ cards.forEach((card) => {
 });
 
 //Functions
+function playerCardAnimate(card){
+    card.classList.add("active");
+    setTimeout(function(){
+        card.classList.remove("active");
+    }, 1000);
+}
 function reset(){
     player1.score = 0;
     player1.choice = "";
@@ -58,15 +66,15 @@ function computerPlay(){
     let choice = choices[Math.floor(Math.random() * choices.length)];
     computerCards.forEach(card => {
 
-        card.classList.remove("active");
+        // card.classList.remove("active");
 
         if(card.id.includes(choice)){
             card.classList.add("active");
         }
 
-        // setTimeout(function(){
-        //     card.classList.remove("active");
-        // }, 500)
+        setTimeout(function(){
+            card.classList.remove("active");
+        }, 1000)
     })
 
     return choice 

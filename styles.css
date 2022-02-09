@@ -68,10 +68,13 @@
 
 }
 
-.card:hover{
+.card.active{
     transform: scale(1.1);
+    background-color: lightpink;
+}
+
+.card:hover{
     cursor: pointer;
-    box-shadow: 0 0 5px black;
 
 }
 
